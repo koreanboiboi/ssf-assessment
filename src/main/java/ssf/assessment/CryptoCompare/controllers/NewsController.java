@@ -45,14 +45,7 @@ public class NewsController {
         String tags = form.getFirst("tags");
         String categories = form.getFirst("categories");
         String body = form.getFirst("body");
-       
-
-        // Optional<News> opt = newsSvc.getArticlesbyID(id);
-        // if(opt.isEmpty()){
-        //     // JsonObject error = Json.createObjectBuilder().add("error", "No saved News Article found").build();
-        //     return "articles";
-        // }
-        // News news = opt.get();
+    
 
         model.addAttribute("id",id);
         model.addAttribute("title",title);
