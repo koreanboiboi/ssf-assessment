@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved News of the day</title>
+</head>
+<body>
+    <h1>Saved News</h1>
+    <form action="/news">
+        <input type="submit" value="Go back to news">
+    </form>
+    <div>
+        <h5> <span data-th-text="${id}"></span></h5>
+        <img data-th-src="${imageurl}" width="50">
+        <h2> <span data-th-text="$(title)"></span></h2>
+        <p> <span data-th-text="${body}"></span></p>
+        <h4 ><span data-th-text="${categories}"></span></h4>
+        <h5 ><span data-th-text="${tags}"></span></h5>
+        <a th:href="@{''+${url}}">LINK</a>
+        <h6><span data-th-text="${published_on}"></span></h6>
+    </div>
+</body>
+</html>

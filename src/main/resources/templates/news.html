@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto News of the Day</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        <form action="/articles" method="POST">
+            <input type="hidden" name="articles" id="articles">
+            <button type="submit">Save</button>
+            <div class="center" data-th-each="n:${news}">
+                <img data-th-src="${n.imageurl}" width="50">
+                <h6>ID: <span data-th-text="${n.id}"></span></h6>
+                <h2>Title: <span data-th-text="${n.title}"></span></h2>
+                <p>Content: <span data-th-text="${n.body}"></span></p>
+                <h5 data-th-text="${n.published_on}"></h5>
+                <h6 data-th-text="${n.categories}"> <span data-th-text="${n.tags}"></span></h6>
+                <input type="checkbox" id="articles" name="articles" value="articles">
+                <label for="articles">Save</label>
+                <a th:href="@{''+${n.url}}">Link</a>
+                <hr class="solid">
+            </div>
+        </form>
+            
+    </body>
+</html>
